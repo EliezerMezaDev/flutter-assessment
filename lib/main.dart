@@ -1,4 +1,5 @@
 //- FLUTTER IMPORTS
+import 'package:flight_app/views/airlinesList.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'FlightsApp',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
         ),
         home: RootPage(),
       ),
@@ -49,7 +50,7 @@ class _RootPageState extends State<RootPage> {
         page = Flights();
         break;
       case 1:
-        page = Flights();
+        page = Airlines();
         break;
       case 2:
         page = Placeholder();

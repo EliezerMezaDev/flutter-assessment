@@ -47,7 +47,7 @@ class _FlightsState extends State<Flights> {
                   ? errorScreen(provider.error)
                   : Column(
                     children: [
-                      filterSection(provider),
+                      filters(provider),
                       Expanded(
                         child: flightsList(
                           provider.flights.itineraries,
@@ -83,7 +83,7 @@ class _FlightsState extends State<Flights> {
     );
   }
 
-  Widget filterSection(CommonProvider provider) {
+  Widget filters(CommonProvider provider) {
     final airlines = [
       '...',
       ...provider.flights.itineraries
