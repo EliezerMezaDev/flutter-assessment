@@ -1,6 +1,7 @@
 import 'package:flight_app/models/common.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flight_app/views/fligth.dart';
 
 //? COMMON PROVIDER
 import 'package:flight_app/provider/common.dart';
@@ -199,7 +200,26 @@ class _FlightsState extends State<Flights> {
                                     TextButton(
                                       onPressed: () {
                                         Navigator.pop(context);
-                                        //! NAV TO
+
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder:
+                                                (context) => Flight(
+                                                  itinerary: itinerary,
+                                                  legs:
+                                                      legs
+                                                          .where(
+                                                            (leg) => itinerary
+                                                                .legs
+                                                                .contains(
+                                                                  leg.id,
+                                                                ),
+                                                          )
+                                                          .toList(),
+                                                ),
+                                          ),
+                                        );
                                       },
                                       child: const Text('See more'),
                                     ),

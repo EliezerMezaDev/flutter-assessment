@@ -127,7 +127,8 @@ class _AirlinesState extends State<Airlines> {
 
     final filteredAirlines =
         legs.where((legs) {
-          final isAirlineValid = selectedAirline == '...';
+          final isAirlineValid =
+              selectedAirline == '...' || legs.airlineName == selectedAirline;
           return isAirlineValid;
         }).toList();
 
