@@ -100,5 +100,5 @@ class Leg {
   };
 }
 
- Flights flightsFromJson(String str) => Flights.fromJson(json.decode(str));
- String flightsToJson(Flights data) => json.encode(data.toJson());
+Flights decodeFlightsFromJson(String str) => Flights.fromJson(json.decode(str));
+String encodeFlightsToJson(Flights data) => json.encode(data.toJson());

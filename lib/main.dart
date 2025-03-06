@@ -1,4 +1,5 @@
 //- FLUTTER IMPORTS
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flight_app/views/airlinesList.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,8 +8,10 @@ import 'package:provider/provider.dart';
 import 'package:flight_app/provider/common.dart';
 import 'package:flight_app/views/flightsList.dart';
 
-void main() {
-  runApp(MyApp());
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -81,10 +84,6 @@ class _RootPageState extends State<RootPage> {
                 BottomNavigationBarItem(
                   icon: Icon(Icons.map_sharp),
                   label: 'Airlines',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite),
-                  label: 'Save',
                 ),
               ],
               iconSize: 30,
